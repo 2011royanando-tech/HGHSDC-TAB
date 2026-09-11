@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>TRADITIONAL DEBATE TAB — HGHSDC Official Tournament OS 2026</title>
+  
+  <!-- SEO & Social Media Production Meta Tags -->
+  <meta name="description" content="Official Traditional Debate Tournament Management & Tabulation Operating System for Habiganj Govt. High School Debating Club (HGHSDC). Live FIFA-style bracket, Senior Masters segment, speech timer, and real-time adjudication." />
+  <meta name="keywords" content="HGHSDC, HGHS, Debate Tab, Traditional Debate, Tournament Tabulation, Habiganj, Debate Scorecard" />
+  <meta name="author" content="HGHSDC Technical Committee" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="TRADITIONAL DEBATE TAB — HGHSDC Debate Tournament 2026" />
+  <meta property="og:description" content="Official Traditional Debate Tabulation & Management System for HGHSDC • HGHS. Live matches, senior championship, and real-time adjudication." />
+  <meta property="og:image" content="/static/img/hghsdc.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="TRADITIONAL DEBATE TAB — HGHSDC 2026" />
+  <meta name="twitter:description" content="Official Traditional Debate Tournament Tabulation System." />
+  <meta name="twitter:image" content="/static/img/hghsdc.png" />
+  <meta name="theme-color" content="#091224" />
+  <meta name="apple-mobile-web-app-title" content="Debate Tab" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- Favicons & Brand Assets -->
+  <link rel="icon" type="image/png" href="/static/img/hghsdc.png?v=2026" />
+  <link rel="alternate icon" type="image/png" href="/static/img/hghsdc.png?v=2026" />
+  <link rel="apple-touch-icon" href="/static/img/hghsdc.png?v=2026" />
+
+  <!-- Modern 2026 Google Fonts with font-display swap -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Core Theme & Stylesheets -->
+  <link rel="stylesheet" href="/static/css/windows11.css?v=2026.4" />
+  <link rel="stylesheet" href="/static/css/spreadsheet.css?v=2026.4" />
+  <link rel="stylesheet" href="/static/css/bracket.css?v=2026.4" />
+  <link rel="stylesheet" href="/static/css/timer.css?v=2026.4" />
+</head>
+<body>
+  <!-- Fixed Ambient Background Wallpaper & Official Faint Watermark -->
+  <div class="app-bg-wallpaper" aria-hidden="true"></div>
+  <div class="app-bg-watermark" aria-hidden="true"></div>
+
+  <header class="win-navbar">
+    <div style="display:flex; align-items:center; gap:0.65rem;">
+      <button class="sidebar-toggle-btn" id="sidebar-toggle-btn" title="Toggle Sidebar" onclick="window.app && window.app.toggleSidebar()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <div class="brand-container" onclick="window.app.navigate('public_bracket')" title="Tournament Overview">
+        <div style="display:flex; align-items:center; gap:0.55rem; flex-shrink:0;">
+          <img src="/static/img/hghsdc.png" alt="HGHSDC" class="navbar-crest" style="width:40px; height:40px; object-fit:contain; border-radius:50%; border:1.5px solid #eab308; background:#fff;" />
+          <img src="/static/img/hghs.png" alt="HGHS" class="navbar-crest" style="width:40px; height:40px; object-fit:contain; border-radius:50%; border:1.5px solid #dc2626; background:#fff;" />
+        </div>
+        <div>
+          <div class="brand-title" data-i18n="app_title">TRADITIONAL DEBATE TAB</div>
+          <div style="display: flex; align-items: center; gap: 0.45rem;">
+            <span class="brand-badge">HGHSDC • HGHS</span>
+            <span class="brand-subbadge">2026</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nav-actions" id="nav-right"></div>
+  </header>
+
+  <div class="app-container">
+    <nav class="win-sidebar" id="app-sidebar"></nav>
+
+    <main class="main-content" id="main-view">
+      <div class="loading-screen-container">
+        <div class="loading-card win-glass">
+          <div class="loading-crests-wrap">
+            <div class="loading-crest-halo"></div>
+            <img src="/static/img/hghsdc.png" alt="HGHSDC" class="loading-logo-spin" />
+            <img src="/static/img/hghs.png" alt="HGHS" class="loading-logo-spin" />
+          </div>
+          <h3 class="loading-title">TRADITIONAL DEBATE TAB</h3>
+          <p class="loading-subtitle">Habiganj Govt. High School Debating Club • HGHS</p>
+          <div class="loading-shimmer-bar">
+            <div class="loading-shimmer-fill"></div>
+          </div>
+          <span class="loading-status-text">লোড হচ্ছে... (Initializing Tournament System...)</span>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="/static/js/brand_assets.js?v=2026.3"></script>
+  <script src="/static/js/i18n.js?v=2026.2"></script>
+  <script src="/static/js/audio.js?v=2026.2"></script>
+  <script src="/static/js/api.js?v=2026.2"></script>
+  <script src="/static/js/timer.js?v=2026.2"></script>
+  <script src="/static/js/spreadsheet.js?v=2026.2"></script>
+  <script src="/static/js/bracket.js?v=2026.2"></script>
+  <script src="/static/js/app.js?v=2026.2"></script>
+</body>
+</html>

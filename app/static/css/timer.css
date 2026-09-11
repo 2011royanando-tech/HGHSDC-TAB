@@ -1,0 +1,140 @@
+/* ==========================================================================
+   OFFICIAL DEBATE TIMER — 2026 MODERN MINIMALIST
+   ========================================================================== */
+
+.timer-card {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem 2rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.timer-speaker-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 1.1rem;
+  background: #f8fafc;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-pill);
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--brand-navy);
+  margin-bottom: 1.4rem;
+  box-shadow: 0 1px 2px rgba(9, 18, 36, 0.03);
+}
+
+.timer-digits-container {
+  margin: 0.85rem 0;
+  user-select: none;
+}
+
+.timer-digits {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-size: 6.8rem;
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--brand-navy);
+  text-shadow: 0 4px 18px rgba(9, 18, 36, 0.08);
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.timer-digits.warning {
+  color: var(--brand-gold-dark);
+  text-shadow: 0 4px 22px rgba(245, 158, 11, 0.35);
+}
+
+.timer-digits.critical {
+  color: var(--accent-red);
+  text-shadow: 0 4px 22px rgba(220, 38, 38, 0.4);
+}
+
+.timer-digits.overtime {
+  color: #dc2626;
+  text-shadow: 0 4px 24px rgba(220, 38, 38, 0.5);
+  animation: timerBlink 1s infinite;
+}
+
+@keyframes timerBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+.timer-progress-bar {
+  width: 100%;
+  max-width: 440px;
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  margin-bottom: 1.75rem;
+}
+
+.timer-progress-fill {
+  height: 100%;
+  background: var(--brand-navy);
+  border-radius: var(--radius-pill);
+  transition: width 0.1s linear, background-color 0.3s ease;
+}
+
+.timer-progress-fill.warning {
+  background: var(--brand-gold);
+}
+
+.timer-progress-fill.critical {
+  background: var(--accent-red);
+}
+
+.timer-controls {
+  display: flex;
+  gap: 0.85rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.timer-phase-badge {
+  margin-top: 1.25rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+/* ========== TIMER DARK MODE ========== */
+[data-theme="dark"] .timer-card {
+  background: rgba(15, 25, 48, 0.92);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.65);
+}
+
+[data-theme="dark"] .timer-speaker-pill {
+  background: rgba(13, 23, 42, 0.9);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #fbbf24;
+}
+
+[data-theme="dark"] .timer-digits {
+  color: #f8fafc;
+  text-shadow: 0 4px 28px rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="dark"] .timer-progress-bar {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] #timer-container > div[style*="background: #f8fafc"] {
+  background: rgba(15, 23, 42, 0.75) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+

@@ -1,0 +1,316 @@
+/* ==========================================================================
+   FIFA-STYLE 16-TEAM KNOCKOUT BRACKET — 2026 OFFICIAL CHAMPIONSHIP THEME
+   ========================================================================== */
+
+.bracket-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 1.75rem;
+  overflow-x: auto;
+  padding: 1.75rem 0.75rem;
+  min-width: 1120px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(14px);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-card);
+}
+
+.bracket-half {
+  display: flex;
+  gap: 1.6rem;
+  flex: 1;
+}
+
+.bracket-half.right {
+  flex-direction: row-reverse;
+}
+
+.bracket-round-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 236px;
+  gap: 1.35rem;
+}
+
+.bracket-round-title {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--brand-navy);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: center;
+  padding-bottom: 0.55rem;
+  border-bottom: 2px solid var(--brand-gold);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+}
+
+.bracket-match-card {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 0.75rem 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: all 0.15s ease;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+.bracket-match-card:hover {
+  background: rgba(255, 255, 255, 0.82);
+  border-color: var(--brand-navy);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.match-header-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.match-team-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0.6rem;
+  border-radius: var(--radius-sm);
+  background: #f8fafc;
+  border: 1px solid var(--border-subtle);
+  transition: all 0.1s ease;
+}
+
+.match-team-row.winner {
+  background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+  border-color: #6ee7b7;
+  font-weight: 800;
+  color: #065f46;
+  box-shadow: 0 1px 3px rgba(6, 95, 70, 0.08);
+}
+
+.match-team-row.winner::before {
+  content: '★ ';
+  color: var(--brand-gold);
+  font-size: 0.75rem;
+  margin-right: 0.2rem;
+}
+
+.match-team-name {
+  font-size: 0.84rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 145px;
+  font-weight: 600;
+}
+
+.match-team-score {
+  font-size: 0.9rem;
+  font-weight: 800;
+  min-width: 28px;
+  text-align: right;
+  color: var(--brand-navy);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Bracket Center - Finals & Trophy Showcase */
+.bracket-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 270px;
+  gap: 1.6rem;
+  padding: 0 0.5rem;
+}
+
+.trophy-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.35rem;
+  filter: drop-shadow(0 4px 12px var(--brand-gold-glow));
+}
+
+.trophy-icon-svg {
+  width: 48px;
+  height: 48px;
+  color: var(--brand-gold);
+  animation: floatSubtle 3s infinite ease-in-out;
+}
+
+@keyframes floatSubtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.champion-card {
+  background: linear-gradient(135deg, #fef9c3 0%, #ffffff 50%, #fef08a 100%);
+  border: 2px solid var(--brand-gold);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.4rem;
+  text-align: center;
+  width: 100%;
+  box-shadow: 0 6px 20px var(--brand-gold-glow);
+  position: relative;
+  overflow: hidden;
+}
+
+.champion-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #b45309, #fde047, #b45309);
+}
+
+.champion-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--brand-gold-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+}
+
+.champion-name {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--brand-navy);
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+}
+
+
+.bracket-container {
+  background: rgba(255, 255, 255, 0.82) !important;
+  backdrop-filter: blur(24px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.75) !important;
+  box-shadow: 0 14px 36px -4px rgba(9, 18, 36, 0.12), inset 0 1px 2px rgba(255, 255, 255, 0.9) !important;
+  border-radius: 16px !important;
+}
+
+.bracket-match-card {
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border: 1px solid rgba(226, 232, 240, 0.9) !important;
+  box-shadow: 0 4px 12px rgba(9, 18, 36, 0.05), inset 0 1px 1px rgba(255, 255, 255, 1) !important;
+  border-radius: 12px !important;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.bracket-match-card:hover {
+  transform: translateY(-3px) scale(1.01) !important;
+  border-color: var(--brand-navy) !important;
+  box-shadow: 0 12px 24px -4px rgba(9, 18, 36, 0.15) !important;
+}
+
+.bracket-match-card.is-live-match {
+  border-color: #10b981 !important;
+  box-shadow: 0 0 0 1.5px #10b981, 0 8px 24px -4px rgba(16, 185, 129, 0.25) !important;
+}
+
+.live-pulse-dot-sm {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #f59e0b;
+  display: inline-block;
+  box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7);
+  animation: livePulseDot 1.8s infinite;
+}
+
+@keyframes livePulseDot {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(245, 158, 11, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+  }
+}
+
+/* ========== BRACKET DARK MODE ========== */
+[data-theme="dark"] .bracket-container {
+  background: rgba(15, 25, 48, 0.6);
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="dark"] .bracket-round-title {
+  color: #94a3b8;
+  border-bottom-color: rgba(251, 191, 36, 0.3);
+}
+
+[data-theme="dark"] .bracket-match-card {
+  background: rgba(15, 25, 48, 0.85) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.03) !important;
+}
+
+[data-theme="dark"] .bracket-match-card:hover {
+  border-color: rgba(251, 191, 36, 0.25) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(251, 191, 36, 0.1) !important;
+}
+
+[data-theme="dark"] .match-header-info {
+  color: #64748b;
+}
+
+[data-theme="dark"] .match-team-row {
+  background: rgba(13, 23, 42, 0.7);
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="dark"] .match-team-row.winner {
+  background: linear-gradient(135deg, rgba(52, 211, 153, 0.12) 0%, rgba(16, 185, 129, 0.08) 100%);
+  border-color: rgba(52, 211, 153, 0.3);
+  color: #6ee7b7;
+}
+
+[data-theme="dark"] .match-team-name {
+  color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .match-team-score {
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .match-team-row.winner .match-team-score {
+  color: #6ee7b7;
+}
+
+[data-theme="dark"] .bracket-champion-card {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.08) 0%, rgba(245, 158, 11, 0.04) 100%);
+  border-color: rgba(251, 191, 36, 0.25);
+  box-shadow: 0 4px 24px rgba(251, 191, 36, 0.12);
+}
+
+[data-theme="dark"] .bracket-champion-card .champion-name {
+  color: #fbbf24;
+  text-shadow: 0 0 16px rgba(251, 191, 36, 0.3);
+}

@@ -1,0 +1,380 @@
+/* ==========================================================================
+   EXCEL-STYLE ADJUDICATION SPREADSHEET — 2026 OFFICIAL FORMAL THEME
+   ========================================================================== */
+
+.spreadsheet-wrapper {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.spreadsheet-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 1.4rem;
+  background: #f8fafc;
+  border-bottom: 1px solid var(--border-card);
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.toolbar-left, .toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.spreadsheet-scroll {
+  overflow: auto;
+  max-height: 590px;
+  position: relative;
+  background: #ffffff;
+}
+
+.sheet-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.86rem;
+  background: #ffffff;
+}
+
+/* Excel Style Grid Headers */
+.sheet-table thead th {
+  position: sticky;
+  top: 0;
+  background: #f8fafc;
+  z-index: 10;
+  padding: 0.75rem 0.95rem;
+  border: 1px solid var(--border-card);
+  color: var(--brand-navy);
+  font-weight: 700;
+  white-space: nowrap;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Sticky First Columns */
+.sheet-col-sticky-1 {
+  position: sticky;
+  left: 0;
+  background: #f8fafc !important;
+  z-index: 5;
+  width: 46px;
+  text-align: center;
+  border-right: 1px solid var(--border-card) !important;
+  color: var(--text-muted);
+  font-weight: 800;
+}
+
+.sheet-col-sticky-2 {
+  position: sticky;
+  left: 46px;
+  background: #ffffff !important;
+  z-index: 5;
+  min-width: 230px;
+  border-right: 2px solid #94a3b8 !important;
+}
+
+thead th.sheet-col-sticky-1, thead th.sheet-col-sticky-2 {
+  background: #f1f5f9 !important;
+  z-index: 15 !important;
+}
+
+/* Standard Excel Grid Cells */
+.sheet-table td {
+  padding: 0.45rem 0.65rem;
+  border: 1px solid #d4d4d4;
+  color: var(--text-primary);
+  vertical-align: middle;
+  background: #ffffff;
+  font-family: 'Segoe UI', 'Aptos', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Team 1 Grouping (3 Debaters) */
+.sheet-table tr.team-1-row td {
+  background: #f8fbff;
+}
+
+.sheet-table tr.team-1-row td.sheet-col-sticky-2 {
+  background: #f0f7ff !important;
+  border-left: 4px solid var(--accent-blue);
+}
+
+/* Team 2 Grouping (3 Debaters) */
+.sheet-table tr.team-2-row td {
+  background: #f8fdfa;
+}
+
+.sheet-table tr.team-2-row td.sheet-col-sticky-2 {
+  background: #f0fdf4 !important;
+  border-left: 4px solid var(--accent-green);
+}
+
+/* Team Header Row */
+.sheet-table tr.team-header-row td {
+  background: #f1f5f9;
+  font-weight: 800;
+  color: var(--brand-navy);
+  border-top: 2px solid #94a3b8;
+  border-bottom: 2px solid var(--border-card);
+}
+
+/* Team Total Row */
+.sheet-table tr.team-total-row td {
+  background: #f8fafc;
+  font-weight: 800;
+  color: var(--brand-navy);
+  border-bottom: 2px solid #94a3b8;
+}
+
+/* Editable Input Cells - Authentic Excel Focus */
+.sheet-input {
+  width: 100%;
+  padding: 0.38rem 0.55rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 2px;
+  color: #0f172a;
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-align: right;
+  transition: all 0.1s ease;
+  font-variant-numeric: tabular-nums;
+  font-family: 'Segoe UI', 'Aptos', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.sheet-input:hover {
+  border-color: #94a3b8;
+}
+
+.sheet-input:focus {
+  outline: 2px solid #107c41 !important;
+  outline-offset: -1px;
+  border-color: #107c41 !important;
+  background: #ffffff;
+  box-shadow: 0 0 0 1px #107c41;
+}
+
+.sheet-input.invalid {
+  border-color: var(--accent-red);
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.crit-header-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.crit-name-input {
+  padding: 0.25rem 0.45rem;
+  background: #ffffff;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+  color: var(--brand-navy);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.crit-max-container {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.crit-max-input {
+  width: 54px;
+  padding: 0.15rem 0.35rem;
+  background: #ffffff;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+  color: var(--brand-gold-dark);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-align: right;
+}
+
+.speaker-sum-cell {
+  font-weight: 800;
+  color: var(--brand-navy);
+  text-align: right;
+  font-size: 0.94rem;
+  padding-right: 0.95rem;
+  background: #f8fafc !important;
+  font-variant-numeric: tabular-nums;
+}
+
+.team-sum-cell {
+  font-weight: 900;
+  color: var(--brand-navy);
+  text-align: right;
+  font-size: 1.15rem;
+  padding-right: 0.95rem;
+  background: #f1f5f9 !important;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Debater Row Inner Info */
+.debater-cell-content {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.debater-text-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.debater-name {
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--brand-navy);
+}
+
+.debater-sub {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* Match Comparison Bar */
+.match-comparison-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.75rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f8fafc 100%);
+  border-top: 2px solid var(--border-card);
+  gap: 1.5rem;
+}
+
+.comp-team {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.comp-team.right {
+  align-items: flex-end;
+}
+
+.comp-team-name {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--brand-navy);
+  letter-spacing: -0.015em;
+}
+
+.comp-team-score {
+  font-size: 2.1rem;
+  font-weight: 900;
+  color: var(--brand-navy);
+  font-variant-numeric: tabular-nums;
+}
+
+.comp-vs {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  background: #ffffff;
+  border: 1px solid var(--border-card);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-pill);
+}
+
+/* ========== SPREADSHEET DARK MODE ========== */
+[data-theme="dark"] .spreadsheet-wrapper {
+  background: rgba(15, 25, 48, 0.95);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-lg);
+}
+
+[data-theme="dark"] .spreadsheet-toolbar {
+  background: rgba(13, 21, 38, 0.98);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .spreadsheet-scroll {
+  background: #0b1329;
+}
+
+[data-theme="dark"] .sheet-table {
+  background: #0b1329;
+}
+
+[data-theme="dark"] .sheet-table thead th {
+  background: rgba(18, 30, 56, 0.98);
+  color: #e2e8f0;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .sheet-table td {
+  border-color: rgba(255, 255, 255, 0.06);
+  color: #f1f5f9;
+}
+
+[data-theme="dark"] .sheet-table tr:hover td {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+[data-theme="dark"] .row-team-header td {
+  background: linear-gradient(90deg, rgba(30, 58, 138, 0.35) 0%, rgba(15, 25, 48, 0.8) 100%) !important;
+  color: #fbbf24 !important;
+  border-top-color: rgba(251, 191, 36, 0.3) !important;
+  border-bottom-color: rgba(251, 191, 36, 0.3) !important;
+}
+
+[data-theme="dark"] .sheet-cell-input,
+[data-theme="dark"] .sheet-input {
+  background: rgba(13, 23, 42, 0.85);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #f8fafc;
+}
+
+[data-theme="dark"] .sheet-cell-input:focus,
+[data-theme="dark"] .sheet-input:focus {
+  background: #0f1932;
+  outline: 2px solid #22c55e !important;
+  border-color: #22c55e !important;
+  box-shadow: 0 0 0 1px #22c55e;
+  color: #86efac;
+}
+
+[data-theme="dark"] .cell-subtotal,
+[data-theme="dark"] .cell-grand-total {
+  background: rgba(25, 38, 68, 0.6);
+  color: #fbbf24;
+  font-weight: 800;
+}
+
+[data-theme="dark"] .match-comparison-bar {
+  background: linear-gradient(135deg, #0d1526 0%, #111d38 50%, #0d1526 100%);
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .comp-team-name {
+  color: #f8fafc;
+}
+
+[data-theme="dark"] .comp-team-score {
+  color: #fbbf24;
+}
+
+[data-theme="dark"] .comp-vs {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #94a3b8;
+}
+
